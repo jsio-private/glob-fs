@@ -33,8 +33,6 @@
     "glob-fs-gitignore": "^0.1.5",
     "glob-parent": "^1.2.0",
     "graceful-fs": "^4.1.2",
-    "is-dotdir": "^0.1.0",
-    "is-dotfile": "^1.0.1",
     "is-glob": "^2.0.0",
     "is-windows": "^0.1.0",
     "kind-of": "^2.0.0",

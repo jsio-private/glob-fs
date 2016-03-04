@@ -7,7 +7,7 @@ var extend = require('extend-shallow');
 function testPattern(pattern) {
   return function (fp) {
     return pattern.test(fp);
-  }
+  };
 }
 
 module.exports = function (pattern, options) {
@@ -19,6 +19,7 @@ module.exports = function (pattern, options) {
     : testPattern(pattern);
 
   return function exclude(file) {
+    // TODO: This would never happen??
     if (file.pattern.hasTrailingSlash && file.isFile()) {
       return file;
     }
@@ -34,10 +35,11 @@ module.exports = function (pattern, options) {
         return file;
       }
 
-      if (file.pattern.test(file.segment) || file.pattern.test(file.relative)) {
-        file.exclude = true;
-        return file;
-      }
+      // TODO: bad - evals to true for everything...
+      // if (file.pattern.test(file.segment) || file.pattern.test(file.relative)) {
+      //   file.exclude = true;
+      //   return file;
+      // }
     }
     return file;
   };
